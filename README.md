@@ -6,22 +6,15 @@
 
 </span>
 
-## Motivation
-
-🔬 What you wanted was: `const embedding: Vector = await embed("My data", { model: 'openai/text-embedding-v3-large' })` but it was complicated or didn't work?
-This packages comes to your rescue! Local emebedding model inference isn't easy. Via API there are plenty of providers. It's alot of work! 
-
-## 👶 It's easy!
-
-### 📚 Install
+## 📚 Install
 
 `npm/yarn/bun install easy-embeddings`
 
-### ⚡ Use
+## ⚡ Use
 
-#### Remote inference (call an API)
+### Remote inference (call an API)
 
-##### Single text vector embedding
+#### Single text vector embedding
 ```ts
 import { embed } from "easy-embeddings";
 
@@ -33,7 +26,7 @@ const embedding: EmbeddingResponse = await embed("Hallo, Welt!", "mixedbread-ai"
 }, { apiKey: import.meta.env[`mixedbread-ai_api_key`] })
 ```
 
-##### Multi-text vector embeddings
+#### Multi-text vector embeddings
 ```ts
 import { embed } from "easy-embeddings";
 
@@ -43,7 +36,7 @@ const embedding: EmbeddingResponse = await embed(["Hello", "World"], "openai", {
 }, { apiKey: import.meta.env[`openai_api_key`] })
 ```
 
-#### Local inference
+### Local inference
 
 ```ts
 import { embed } from "easy-embeddings";
@@ -66,7 +59,7 @@ const embedding: EmbeddingResponse = await embed(["Hello", "World"], "local", {
 })
 ```
 
-#### Download models locally
+### Download models locally
 
 You might want to write and execute a script to manually download a model locally:
 ```ts
@@ -76,9 +69,9 @@ import { downloadModel } from "easy-embeddings/tools";
 await downloadModel('Xenova/multilingual-e5-small', 'public/models')
 ```
 
-### Help improve this project!
+## Help improve this project!
 
-#### Setup
+### Setup
 
 Clone this repo, install the dependencies (`bun` is recommended for speed),
 and run `npm run test` to verify the installation was successful. You may want to play with the experiments.
