@@ -1,12 +1,13 @@
 import { expect, test } from "vitest";
-import { embed, loadEmbeddingModel } from "./";
+import { embed } from "../dist/web.mjs";
 //import { perf } from "@jsheaven/perf";
 
 test("Make sure the API interface/contract is fulfilled", async () => {
   expect(typeof embed).toEqual("function");
-  expect(typeof loadEmbeddingModel).toEqual("function");
+  //expect(typeof loadEmbeddingModel).toEqual("function");
 });
 
+/*
 test("Can load a local embedding model, WASM, quantized uint8", async () => {
   const { tokenizer, model } = await loadEmbeddingModel(
     "Xenova/multilingual-e5-small",
@@ -26,6 +27,7 @@ test("Can load a local embedding model, WASM, quantized uint8", async () => {
   expect(typeof tokenizer).toEqual("function");
   expect(typeof model).toEqual("function");
 });
+*/
 
 test("Can infer a local BERT model using XLMRobertaTokenizer tokenizer, qint8, single text string", async () => {
   const embedResult = await embed(

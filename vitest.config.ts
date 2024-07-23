@@ -4,9 +4,9 @@ export default defineConfig({
   base: '/',
   test: {
     browser: {
-      provider: 'playwright', // or 'webdriverio'
+      provider: 'playwright',
       enabled: true,
-      name: 'chromium', // browser name is required
+      name: 'chromium',
     },
     exclude: ["transformers.js/**/*", "node_modules/**/*"],
   },
