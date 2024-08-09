@@ -117,8 +117,16 @@ writeFileSync('transformers.js/dist/transformers.js', transformersJs)
 
 console.log("Copying transformers.js to node_modules...")
 // re-construct phantom dependency in node_modules
-rmSync('node_modules/@xenova/transformers.js', { recursive: true });
-mkdirSync('node_modules/@xenova/transformers.js', { recursive: true });
+if (existsSync("./node_modules/@xenova/transformers.js")) {
+  rmSync("./node_modules/@xenova/transformers.js", { recursive: true });
+} else {
+  if (fs.readdirSync("node_modules").length === 0) {
+    throw Error(
+      "node_modules is empty. Make sure you've installed project dependencies."
+    );
+  }
+}
+mkdirSync("node_modules/@xenova/transformers.js", { recursive: true });
 
 spawnSync('cp', ['-R', 'transformers.js', 'node_modules/@xenova/'], {
   stdio: 'inherit',

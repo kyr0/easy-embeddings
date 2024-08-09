@@ -1,5 +1,5 @@
 {
-  "name": "easy-emebddings",
+  "name": "easy-embeddings",
   "type": "module",
   "version": "1.0.0",
   "description": "Easy, fast and WASM/WebGPU accelerated vector embedding for the web platform. Locally via ONNX/Transformers.js and via API. Compatible with Browsers, Workers, Web Extensions, Node.js & co.",
